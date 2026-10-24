@@ -3,373 +3,106 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#090909">
-<title>ZAL WA TOOL V2</title>
-
+<title>ZAL ANONYMOUS WA</title>
 <style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background: #090909;
-  color: white;
-  font-family: Arial, sans-serif;
-  min-height: 100vh;
-  padding: 20px;
-}
-
-.container {
-  width: 100%;
-  max-width: 430px;
-  margin: 15px auto;
-}
-
-.logo {
-  text-align: center;
-  margin-bottom: 28px;
-}
-
-.logo h1 {
-  color: #ff3030;
-  font-size: 32px;
-  letter-spacing: 4px;
-  text-shadow: 0 0 15px #ff202050;
-}
-
-.logo p {
-  color: #888;
-  font-size: 11px;
-  letter-spacing: 3px;
-  margin-top: 8px;
-}
-
-.status {
-  background: #111;
-  border: 1px solid #292929;
-  border-radius: 10px;
-  padding: 14px;
-  margin-bottom: 18px;
-  display: flex;
-  justify-content: space-between;
-  font-size: 12px;
-}
-
-.green {
-  color: #00ff91;
-}
-
-.card {
-  background: linear-gradient(145deg, #151010, #0c0c0c);
-  border: 1px solid #392020;
-  border-radius: 17px;
-  padding: 22px;
-  box-shadow: 0 0 25px #ff000008;
-}
-
-.card h2 {
-  color: #ff3030;
-  font-size: 21px;
-  margin-bottom: 14px;
-}
-
-.description {
-  color: #999;
-  font-size: 14px;
-  line-height: 1.7;
-  margin-bottom: 25px;
-}
-
-label {
-  display: block;
-  font-size: 13px;
-  color: #ccc;
-  margin-bottom: 10px;
-}
-
-.phone-box {
-  display: flex;
-  align-items: center;
-  border: 1px solid #383838;
-  background: #080808;
-  border-radius: 10px;
-  margin-bottom: 22px;
-  overflow: hidden;
-}
-
-.prefix {
-  color: #00ff91;
-  font-size: 17px;
-  font-weight: bold;
-  padding: 15px 12px;
-  border-right: 1px solid #333;
-  white-space: nowrap;
-}
-
-input {
-  min-width: 0;
-  flex: 1;
-  background: transparent;
-  border: none;
-  outline: none;
-  color: white;
-  padding: 16px 12px;
-  font-size: 16px;
-}
-
-.phone-box:focus-within {
-  border-color: #ff3030;
-  box-shadow: 0 0 12px #ff303020;
-}
-
-textarea {
-  display: block;
-  width: 100%;
-  min-height: 120px;
-  background: #080808;
-  border: 1px solid #383838;
-  border-radius: 10px;
-  color: white;
-  padding: 15px;
-  font-family: Arial, sans-serif;
-  font-size: 15px;
-  outline: none;
-  resize: vertical;
-  margin-bottom: 20px;
-}
-
-textarea:focus {
-  border-color: #ff3030;
-}
-
-button {
-  width: 100%;
-  padding: 16px 10px;
-  border: none;
-  border-radius: 10px;
-  font-size: 14px;
-  font-weight: bold;
-  margin-bottom: 12px;
-  cursor: pointer;
-  transition: .15s;
-}
-
-button:active {
-  transform: scale(.98);
-}
-
-.primary {
-  color: white;
-  background: #ff2929;
-  box-shadow: 0 0 16px #ff202025;
-}
-
-.secondary {
-  background: #1b1b1b;
-  border: 1px solid #373737;
-  color: #eee;
-}
-
-.result {
-  display: none;
-  margin-top: 12px;
-  padding: 15px;
-  background: #080808;
-  border: 1px solid #292929;
-  border-radius: 10px;
-  color: #00ff91;
-  font-size: 13px;
-  line-height: 1.8;
-  overflow-wrap: anywhere;
-  white-space: pre-wrap;
-}
-
-.footer {
-  text-align: center;
-  margin-top: 25px;
-  color: #555;
-  font-size: 12px;
-  line-height: 1.9;
-}
-
-.small {
-  color: #777;
-  font-size: 11px;
-  margin-top: 10px;
-  line-height: 1.6;
-}
+*{box-sizing:border-box}
+body{margin:0;background:#090909;color:#fff;font-family:Arial,sans-serif}
+header{padding:25px 20px;text-align:center;background:#150707;border-bottom:1px solid #ff3030}
+header h1{margin:0;color:#ff3030;font-size:27px}
+header p{color:#aaa;font-size:13px}
+main{max-width:480px;margin:25px auto;padding:20px}
+.card{background:#151515;border:1px solid #292929;border-radius:18px;padding:22px}
+label{display:block;margin:17px 0 8px;color:#ddd;font-size:14px}
+input,textarea{width:100%;padding:14px;background:#080808;border:1px solid #393939;border-radius:10px;color:#fff;font-size:15px;outline:none}
+input:focus,textarea:focus{border-color:#ff3030}
+textarea{height:130px;resize:vertical}
+button{width:100%;padding:15px;border:0;border-radius:10px;font-size:15px;font-weight:bold;cursor:pointer;margin-top:15px}
+.primary{background:#ff3030;color:#fff}
+.secondary{background:#262626;color:#fff}
+.note{margin-top:18px;color:#999;font-size:12px;line-height:1.6}
+.status{font-size:13px;color:#ff7777;margin-top:12px;line-height:1.5}
+footer{text-align:center;color:#666;font-size:12px;padding:20px}
 </style>
 </head>
-
 <body>
-<div class="container">
+<header>
+  <h1>⚡ ZAL ANONYMOUS WA</h1>
+  <p>WhatsApp Message Launcher</p>
+</header>
 
-  <div class="logo">
-    <h1>ZAL WA</h1>
-    <p>WHATSAPP TOOL V2.0</p>
-  </div>
-
-  <div class="status">
-    <span>● SISTEM AKTIF</span>
-    <span class="green">READY</span>
-  </div>
-
+<main>
   <div class="card">
+    <label>Nomor referensi</label>
+    <input id="sender" value="+14846695735" readonly>
 
-    <h2>WHATSAPP TOOL</h2>
+    <label>Nomor WhatsApp target</label>
+    <input id="target" type="tel" placeholder="Contoh: 628123456789">
 
-    <p class="description">
-      Masukkan nomor WhatsApp tujuan dan tulis pesan.
-      Tekan tombol untuk membuka percakapan WhatsApp
-      dengan pesan yang sudah disiapkan.
+    <label>Pesan kamu</label>
+    <textarea id="message" placeholder="Tulis pesan di sini..."></textarea>
+
+    <button class="primary" onclick="openWhatsApp()">BUKA CHAT WHATSAPP</button>
+    <button class="secondary" onclick="copyReference()">SALIN NOMOR REFERENSI</button>
+    <button class="secondary" onclick="resetForm()">RESET</button>
+
+    <div class="status" id="status"></div>
+    <p class="note">
+      Nomor referensi bukan nomor pengirim terverifikasi.
+      Pesan dikirim melalui akun WhatsApp yang kamu gunakan.
+      Aplikasi ini tidak memalsukan identitas pengirim.
     </p>
-
-    <label for="phone">NOMOR WHATSAPP</label>
-
-    <div class="phone-box">
-      <span class="prefix">🇮🇩 +62</span>
-      <input
-        id="phone"
-        type="tel"
-        inputmode="numeric"
-        autocomplete="tel-national"
-        placeholder="81234567890"
-        aria-label="Nomor telepon setelah +62"
-      >
-    </div>
-
-    <label for="message">PESAN WHATSAPP</label>
-
-    <textarea
-      id="message"
-      placeholder="Tulis pesan yang ingin dikirim..."
-    ></textarea>
-
-    <button class="primary" onclick="openWhatsApp()">
-      ↗ BUKA WHATSAPP & KIRIM PESAN
-    </button>
-
-    <button class="secondary" onclick="checkNumber()">
-      ⚡ PERIKSA NOMOR
-    </button>
-
-    <button class="secondary" onclick="resetForm()">
-      ↻ RESET
-    </button>
-
-    <div class="result" id="result" role="status"></div>
-
-    <p class="small">
-      Pesan akan disiapkan di WhatsApp. Kamu tetap perlu
-      menekan tombol Kirim di WhatsApp untuk mengirimnya.
-    </p>
-
   </div>
+</main>
 
-  <div class="footer">
-    ZAL WA TOOL V2.0<br>
-    WhatsApp Chat Launcher
-  </div>
-
-</div>
+<footer>ZAL TOOLS © 2026</footer>
 
 <script>
-function getPhone() {
-  let value = document.getElementById("phone").value;
+function openWhatsApp(){
+  const target=document.getElementById('target').value.replace(/\D/g,'');
+  const message=document.getElementById('message').value.trim();
+  const status=document.getElementById('status');
 
-  // Hapus spasi, tanda baca, dan kode negara jika ikut dimasukkan.
-  value = value.replace(/\D/g, "");
-
-  if (value.startsWith("62")) {
-    value = value.substring(2);
-  }
-
-  // Nomor lokal Indonesia biasanya diawali 0.
-  if (value.startsWith("0")) {
-    value = value.substring(1);
-  }
-
-  return value;
-}
-
-function showResult(message) {
-  const result = document.getElementById("result");
-  result.textContent = message;
-  result.style.display = "block";
-}
-
-function checkNumber() {
-  const localNumber = getPhone();
-
-  if (!/^8\d{8,11}$/.test(localNumber)) {
-    showResult(
-      "FORMAT NOMOR BELUM VALID\n\n" +
-      "Masukkan nomor HP Indonesia setelah +62.\n" +
-      "Contoh: 81234567890"
-    );
+  if(target.length<8){
+    status.textContent='Masukkan nomor target dengan kode negara, misalnya 628123456789.';
     return;
   }
 
-  showResult(
-    "FORMAT NOMOR VALID ✓\n\n" +
-    "Nomor tujuan: +62" + localNumber +
-    "\n\nPemeriksaan ini hanya memeriksa format nomor, " +
-    "bukan memastikan nomor tersebut terdaftar di WhatsApp."
-  );
-}
-
-function openWhatsApp() {
-  const localNumber = getPhone();
-  const message = document.getElementById("message").value.trim();
-
-  if (!/^8\d{8,11}$/.test(localNumber)) {
-    showResult(
-      "NOMOR TIDAK VALID\n\n" +
-      "Masukkan nomor Indonesia tanpa +62 dan tanpa 0 di awal.\n" +
-      "Contoh: 81234567890"
-    );
+  if(!message){
+    status.textContent='Tulis pesan terlebih dahulu.';
     return;
   }
 
-  if (!message) {
-    showResult(
-      "PESAN MASIH KOSONG\n\n" +
-      "Tulis pesan terlebih dahulu atau isi pesan yang ingin disiapkan."
-    );
-    document.getElementById("message").focus();
-    return;
-  }
-
-  const fullNumber = "62" + localNumber;
-
-  const url =
-    "https://wa.me/" +
-    fullNumber +
-    "?text=" +
-    encodeURIComponent(message);
-
-  showResult(
-    "MEMBUKA WHATSAPP...\n\n" +
-    "Nomor tujuan: +" + fullNumber +
-    "\nPesan sudah disiapkan.\n\n" +
-    "Jika WhatsApp terbuka, periksa pesan lalu tekan KIRIM."
-  );
-
-  // Buka tautan resmi WhatsApp.
-  window.location.href = url;
+  status.textContent='Membuka WhatsApp...';
+  const url='https://wa.me/'+target+'?text='+encodeURIComponent(message);
+  window.location.href=url;
 }
 
-function resetForm() {
-  document.getElementById("phone").value = "";
-  document.getElementById("message").value = "";
+function copyReference(){
+  const value=document.getElementById('sender').value;
+  if(navigator.clipboard){
+    navigator.clipboard.writeText(value)
+      .then(()=>document.getElementById('status').textContent='Nomor referensi berhasil disalin.')
+      .catch(()=>fallbackCopy(value));
+  }else{
+    fallbackCopy(value);
+  }
+}
 
-  const result = document.getElementById("result");
-  result.textContent = "";
-  result.style.display = "none";
+function fallbackCopy(value){
+  const el=document.createElement('textarea');
+  el.value=value;
+  document.body.appendChild(el);
+  el.select();
+  document.execCommand('copy');
+  el.remove();
+  document.getElementById('status').textContent='Nomor referensi disalin.';
+}
+
+function resetForm(){
+  document.getElementById('target').value='';
+  document.getElementById('message').value='';
+  document.getElementById('status').textContent='';
 }
 </script>
-
 </body>
 </html>
